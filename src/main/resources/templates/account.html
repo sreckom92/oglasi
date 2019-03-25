@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<body>
+	<div class="container">
+		<hr>
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<header class="card-header">
+						<a href="/dashboard" class="float-right btn btn-outline-primary mt-1">Nazad</a>
+						<h4 class="card-title mt-2">Registrujte Se</h4>
+					</header>
+					<article class="card-body">
+						<form th:action="@{/account}" th:object="${dodajKorisnika}" method="POST">
+							<div class="form-row">
+								<div class="col form-group">
+									<label>Ime </label> <input type="text" class="form-control"
+										placeholder="" name="ime">
+								</div>
+								<div class="col form-group">
+									<label>Prezime</label> <input type="text" class="form-control"
+										placeholder=" " name="prezime">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Email Adresa</label> <input type="email"
+									class="form-control" placeholder="" name="email"> <small
+									class="form-text text-muted">We'll share your email
+									with everyone.</small>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Grad</label> <input type="text" class="form-control"
+										name="grad">
+								</div>
+								<div class="form-group col-md-6">
+									<label>Drzava</label> <input type="text" class="form-control"
+										name="drzava">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Kreirajte Lozinku</label> <input class="form-control"
+									type="password" name="lozinka">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block">
+									Registrujte Se</button>
+							</div>
+						</form>
+					</article>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+</body>
+</html>

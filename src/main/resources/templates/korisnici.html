@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <title>Korisnici</title>
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Prodavnica</a>
+			</div>
+			
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+				<li><a href="/korisnici">Korisnici</a></li>
+				<li><a href="#">Page 2</a></li>
+			</ul>
+			
+			<form class="navbar-form navbar-left" action="/action_page.php">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search"
+						name="search">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</nav>
+<div class="container">
+  <h2>Lista registrovanih korisnika</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email Adresa</th>
+        <th>Grad</th>
+        <th>Drzava</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr th:each = "korisnik : ${listaKorisnika}">
+        <td th:text = "${korisnik.ime}"></td>
+        <td th:text = "${korisnik.prezime}"></td>
+        <td th:text = "${korisnik.email}"></td>
+        <td th:text = "${korisnik.grad}"></td>
+        <td th:text = "${korisnik.drzava}"></td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+</div>
+
+</body>
+</html>
